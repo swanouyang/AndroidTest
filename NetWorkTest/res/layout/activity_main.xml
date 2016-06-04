@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/hucParseBaidu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HUC Parse Baidu" />
+
+    <Button
+        android:id="@+id/hcParseBaidu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HC Parse Baidu" />
+
+    <Button
+        android:id="@+id/hucParseXmlWithPull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HUC Parse XML Pull" />
+
+    <Button
+        android:id="@+id/hucParseXmlWithSAX"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HUC Parse XML SAX" />
+
+    <Button
+        android:id="@+id/hucParseJSONWithJSONObject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HUC Parse JSON JSONObject" />
+
+    <Button
+        android:id="@+id/hucParseJSONWithGSON"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HUC Parse JSON GSON" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/reponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+</LinearLayout>
