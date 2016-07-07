@@ -35,27 +35,21 @@ public class ViewShowActivity extends Activity {
 			Constructor<?> constructor = viewClass.getConstructor(Context.class, AttributeSet.class);
 			View view = (View) constructor.newInstance(this, null);
 			
-			Method method = viewClass.getMethod("run", null);
-			method.invoke(view, null);
+			Method method = viewClass.getMethod("run");
+			method.invoke(view);
 			linearLayout.addView(view);
 			
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		setContentView(linearLayout);
