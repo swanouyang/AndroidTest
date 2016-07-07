@@ -12,11 +12,11 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class WatchView extends View {
-	private static final int WIDTH_CIRCLE = 3;
-	private static final int WIDTH_HOUR = 5;
-	private static final int WIDTH_MINUTE = 4;
-	private static final int WIDTH_SECOND = 2;
-	private static final int WIDTH_CUSOR_LARGE = 5;
+	private static final int WIDTH_CIRCLE = 4;
+	private static final int WIDTH_HOUR = 8;
+	private static final int WIDTH_MINUTE = 6;
+	private static final int WIDTH_SECOND = 4;
+	private static final int WIDTH_CUSOR_LARGE = 6;
 	private static final int WIDTH_CUSOR_SMALL = 3;
 	private static final float WIDTH_NUMBER = 1.0F;
 	
@@ -114,12 +114,15 @@ public class WatchView extends View {
 		double degree = 360.0 / (12 * 60 * 60) * 
 				(hours * 60 * 60 + minutes * 60 + seconds);//hour point move(jump) every seconds.
 		double radians = Math.toRadians(degree);
-		int endX = r + (int)(r * 0.4 * Math.cos(radians));
-		int endY = r + (int)(r * 0.4 * Math.sin(radians));
+		float startX = r + (float)(r * 0.1 * Math.cos(Math.PI+radians));
+		float startY = r + (float)(r * 0.1 * Math.sin(Math.PI+radians));
+		float endX = r + (float)(r * 0.4 * Math.cos(radians));
+		float endY = r + (float)(r * 0.4 * Math.sin(radians));
 		mPaint.setStrokeWidth(WIDTH_HOUR);
 		mPaint.setColor(Color.BLACK);
 		canvas.rotate(-90, r, r);
-		canvas.drawLine(r, r, endX, endY, mPaint);
+		//canvas.drawLine(r, r, endX, endY, mPaint);
+		canvas.drawLine(startX, startY, endX, endY, mPaint);//modify start position
 		
 		canvas.restore();
 		canvas.save();
@@ -127,24 +130,30 @@ public class WatchView extends View {
 		//degree = 360 / 60 * minutes;
 		degree = 360.0 / (60 * 60) * (60 * minutes + seconds);//minute point move(jump) every seconds.
 		radians = Math.toRadians(degree);
-		endX = r + (int)(r * 0.6 * Math.cos(radians));
-		endY = r + (int)(r * 0.6 * Math.sin(radians));
+		startX = r + (float)(r * 0.1 * Math.cos(Math.PI+radians));
+		startY = r + (float)(r * 0.1 * Math.sin(Math.PI+radians));
+		endX = r + (float)(r * 0.6 * Math.cos(radians));
+		endY = r + (float)(r * 0.6 * Math.sin(radians));
 		mPaint.setStrokeWidth(WIDTH_MINUTE);
 		mPaint.setColor(Color.parseColor("#FF555555"));
 		canvas.rotate(-90, r, r);
-		canvas.drawLine(r, r, endX, endY, mPaint);
+		//canvas.drawLine(r, r, endX, endY, mPaint);
+		canvas.drawLine(startX, startY, endX, endY, mPaint);//modify start position
 		
 		canvas.restore();
 		canvas.save();
 		
 		degree = 360 / 60 * seconds;
 		radians = Math.toRadians(degree);
-		endX = r + (int)(r * 0.8 * Math.cos(radians));
-		endY = r + (int)(r * 0.8 * Math.sin(radians));
+		startX = r + (float)(r * 0.1 * Math.cos(Math.PI+radians));
+		startY = r + (float)(r * 0.1 * Math.sin(Math.PI+radians));
+		endX = r + (float)(r * 0.8 * Math.cos(radians));
+		endY = r + (float)(r * 0.8 * Math.sin(radians));
 		mPaint.setStrokeWidth(WIDTH_SECOND);
 		mPaint.setColor(Color.parseColor("#FFFF5555"));
 		canvas.rotate(-90, r, r);
-		canvas.drawLine(r, r, endX, endY, mPaint);
+		//canvas.drawLine(r, r, endX, endY, mPaint);
+		canvas.drawLine(startX, startY, endX, endY, mPaint);//modify start position
 		
 		canvas.restore();
 	}
