@@ -1,6 +1,8 @@
-package com.swan.customviews;
+package com.swan.customviews.views;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -48,6 +50,15 @@ public class MoveBallView extends View {
 		mLeftOrRight = Direction.RIGHT;
 		mUpOrDown = Direction.DOWN;
 		mRandom = new Random();
+	}
+	
+	public void run() {
+		new Timer().schedule(new TimerTask() {
+			@Override
+			public void run() {
+				postInvalidate();
+			}
+		}, 100, 20);
 	}
 	
 	@Override
