@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
 	private static final String MOVE_BALL_VIEW = "com.swan.customviews.views.MoveBallView";
 	private static final String WATCH_VIEW = "com.swan.customviews.views.WatchView";
 	private static final String LINEAR_GRADIENT_VIEW = "com.swan.customviews.views.LinearGradientView";
+	private static final String FIVE_CHESS_VIEW = "com.swan.customviews.views.FiveChessView";
 	//private MoveBallView moveBall;
 	//private WatchView watch;
 	private ListView listView = null;
@@ -40,6 +41,7 @@ public class MainActivity extends Activity {
         viewList.add(MOVE_BALL_VIEW);
         viewList.add(WATCH_VIEW);
         viewList.add(LINEAR_GRADIENT_VIEW);
+        viewList.add(FIVE_CHESS_VIEW);
         
         listView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
